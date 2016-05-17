@@ -1,0 +1,17 @@
+{
+  "name": "fray",
+  "version": "0.1.0",
+  "dependencies": {
+    "raf": "^3.2.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-pegjs": "0.0.1",
+    "gulp-wrapper": "^1.0.0"
+  },
+  "scripts": {
+    "build": "gulp build"
+  }
+}
