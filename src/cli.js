@@ -1,9 +1,10 @@
+#!/usr/bin/env node
 'use strict';
 
-var parser = require('../dist/parser');
+var parser = require('fray.parser');
+var compiler = require('fray.compiler');
 
-var stdout = function (ast) {
-  var output = JSON.stringify(ast, null, 2);
+var stdout = function (output) {
   process.stdout.write(output + '\n');
 };
 
@@ -24,13 +25,14 @@ var stdin = function (callback) {
   });
 };
 
-var parse = function (expr) {
-  stdout(parser.parse(expr));
+var compile = function (expr) {
+  stdout(compiler(parser.parse(expr)));
 };
 
 if (!process.stdin.isTTY) {
-  stdin(parse);
+  stdin(compile);
   return;
 }
 
 // TODO: parse args with minimist
+

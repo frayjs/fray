@@ -33,9 +33,4 @@ gulp.task('pegjs', ['clean'], function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('js', ['clean'], function () {
-  return gulp.src('src/**/*.js')
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('build', ['pegjs', 'js']);
+gulp.task('build', ['pegjs']);
