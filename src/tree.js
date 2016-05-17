@@ -25,7 +25,7 @@ var update = function (tree, path, value) {
   var patch = {};
   var index = path[0];
 
-  patch[index] = write(tree[index], path.slice(1), value);
+  patch[index] = update(tree[index], path.slice(1), value);
   return merge(tree, patch);
 };
 

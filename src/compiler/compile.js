@@ -3,7 +3,7 @@
 var fileread = require('../helpers/fileread');
 
 var tpl = fileread(__dirname, 'template.js');
-var tokens = tpl.split('{{ hyperscript }}');
+var tokens = tpl.split('/* hyperscript */');
 var header = tokens[0];
 var footer = tokens[1];
 

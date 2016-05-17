@@ -1,17 +1,33 @@
 {
   "name": "fray",
+  "description": "A framework for creating web applications",
   "version": "0.1.0",
-  "dependencies": {
-    "raf": "^3.2.0",
-    "virtual-dom": "^2.1.1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frayjs/fray.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "fray": "src/cli.js"
   },
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
     "gulp-pegjs": "0.0.1",
-    "gulp-wrapper": "^1.0.0"
+    "gulp-wrapper": "^1.0.0",
+    "husky": "^0.11.4",
+    "mversion": "^1.10.1"
   },
   "scripts": {
-    "build": "gulp build"
+    "setup": "npm install",
+    "upgrade": "npm update",
+    "lint": "gulp lint",
+    "test": "gulp test",
+    "build": "gulp build",
+    "precommit": "npm test",
+    "patch": "mversion patch -mn",
+    "minor": "mversion minor -mn",
+    "major": "mversion major -mn"
   }
 }
