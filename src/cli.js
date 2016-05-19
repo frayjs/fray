@@ -15,7 +15,7 @@ var stdin = function (callback) {
   process.stdin.on('readable', function () {
     var chunk;
 
-    while (chunk = process.stdin.read()) {
+    while ((chunk = process.stdin.read())) {
       data += chunk;
     }
   });

@@ -2,15 +2,8 @@
 
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var del = require('del');
-var pegjs = require('gulp-pegjs');
-var wrapper = require('gulp-wrapper');
 
-gulp.task('clean', function () {
-  return del(['dist']);
-});
-
-gulp.task('lint', ['clean'], function () {
+gulp.task('lint', function () {
   var sources = [
     'src/**/*.js',
     'test/**/*.js'
@@ -23,14 +16,3 @@ gulp.task('lint', ['clean'], function () {
 });
 
 gulp.task('test', ['lint']);
-
-gulp.task('pegjs', ['clean'], function () {
-  return gulp.src('src/**/*.pegjs')
-    .pipe(pegjs())
-    .pipe(wrapper({
-      header: 'module.exports = '
-    }))
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('build', ['pegjs']);
