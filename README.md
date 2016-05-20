@@ -18,16 +18,25 @@ Draft
 
 ### Roadmap
 
-  * `h`
-  * event delegation
-  * nested components
-  * directives (`<for each="user" in="users">`)
-  * router
-  * workers
+  * `fray.emitter`
+  * `fray.delegator`
+  * `fray.h`
+      * nested components, scope inheritance
+      * directives (`<do repeat="users" as="user">`)
+      * event binding
+  * `fray.model`
+      * arrays handling
+      * computed properties
+  * `fray`
+      * component directory to node module compiler
+      * component controller
+      * component styles (`CSS modules`, `postCSS`)
 
-### Issues
+### Backlog
 
-  * generate json ast so that we can `cat source | parse | compile`
+  * `fray.request`
+  * `fray.router`
+  * `fray.worker`
 
 Test
 ----
