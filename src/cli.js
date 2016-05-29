@@ -4,10 +4,6 @@
 var parser = require('fray.parser');
 var compiler = require('fray.compiler');
 
-var stdout = function (output) {
-  process.stdout.write(output + '\n');
-};
-
 var stdin = function (callback) {
   var data = '';
   process.stdin.setEncoding('utf-8');
@@ -23,6 +19,10 @@ var stdin = function (callback) {
   process.stdin.on('end', function () {
     callback(data);
   });
+};
+
+var stdout = function (output) {
+  process.stdout.write(output + '\n');
 };
 
 var compile = function (expr) {
